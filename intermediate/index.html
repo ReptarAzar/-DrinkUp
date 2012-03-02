@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<!-- design and development by
+
+ __                   _   __ _     _ _     __       _         
+/ _\_      _____  ___| |_/ _\ |__ (_) |_  / /  __ _| |__  ___ 
+\ \\ \ /\ / / _ \/ _ \ __\ \| '_ \| | __|/ /  / _` | '_ \/ __|
+_\ \\ V  V /  __/  __/ |__\ \ | | | | |_/ /__| (_| | |_) \__ \
+\__/ \_/\_/ \___|\___|\__\__/_| |_|_|\__\____/\__,_|_.__/|___/                                                           
+
+-->
+	<head>
+		
+		<link rel="stylesheet" href='css/7d80285.css' type="text/css" media="screen" title="no title" charset="utf-8" />
+		
+		<meta name="description" content="#DrinkUp a twitter powered drinking game, everytime a tweet with #DrinkUp is sent, a can opens, and we do as it says! Cheers and DrinkUp!" />
+		<meta name="keywords" content="Twitter, Twitter API, game, drinking game, alcohol, twitter drinking game, bar, power hour, powerhour, college" />
+		<meta name="author" content="SweetShit Labs, Chris Azar, Isaac Budmen and Nigel Gross" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="refresh" content="60" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+		
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-precomposed.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon.png"/>
+
+
+ 
+			<!-- iPad - landscape (748x1024) -->
+		<link rel="apple-touch-startup-image" href="img/ipad-landscape.png"  
+		media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+
+		<!-- iPad - portrait (768x1004) --> 
+		<link rel="apple-touch-startup-image" href="img/startup-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+		
+		<link rel="apple-touch-startup-image" href="img/iphone-lowres.png" media="screen and (max-device-width: 320)" />
+
+		
+		
+		<title>
+			#DrinkUp
+		</title>
+
+		<script src="js/script.js" type="text/javascript" charset="utf-8">
+</script>
+		<script type="text/javascript">
+//<![CDATA[
+
+		// Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+		// Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+
+		//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+		//** Call: uniquevar.playclip() to play sound
+
+		var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+		"mp3": "audio/mpeg",
+		"mp4": "audio/mp4",
+		"ogg": "audio/ogg",
+		"wav": "audio/wav"
+		}
+
+		function createsoundbite(sound){
+		var html5audio=document.createElement('audio')
+		if (html5audio.canPlayType){ //check support for HTML5 audio
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+		}
+		else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+		}
+		}
+
+		//Initialize two sound clips with 1 fallback file each:
+
+		var mouseoversound=createsoundbite("audio/crack.ogg","audio/crack.mp3")
+		var clicksound=createsoundbite("audio/crack.ogg","audio/crack.mp3")
+
+		//]]>
+		</script>
+		<script type="text/javascript">
+//<![CDATA[
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-28941090-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+		//]]>
+		</script>
+
+		<script src="http://platform.twitter.com/anywhere.js?id=pZDNvUBWsP1leWpRLG5sw&v=1"></script>
+		
+		<script type="text/javascript">
+		twttr.anywhere(function(twitter) {
+		twitter("a.twit").hovercards({
+		username: function(node) {
+		return node.title;
+		}
+		});
+		});
+		</script>
+
+
+	</head>
+	<body>
+		
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		
+		<div id="left">
+			<div id="header" onmouseover="mouseoversound.playclip()">
+				<div id="logo">
+									
+								</div>
+<img src="img/drinkuplogo.png" title="#DrinkUp baby!" alt="Logo" class="logo" />
+
+			</div>
+			<div class="post-it">
+				<img src="img/napkintape.png"  width="220" alt="Napkintape" title="Rules of the game" />
+			</div>
+			
+			<object>
+						<param name="autostart" value="true" />
+						<param name="src" value="audio/crack.mp3" />
+						<param name="autoplay" value="true" />
+						<!-- <param name="controller" value="true" /> -->
+						<embed src="audio/crack.mp3" autoplay="true" autostart="True" type="audio/mp3" />
+									</object>
+			<div id="shots">
+				<ul>
+					<li>
+						<img src="img/shot-glass.png" width="106" />
+					</li>
+					<li>
+						<img src="img/shot-glass.png" width="106" />
+					</li>
+					<li>
+						<img src="img/shot-glass.png" width="106" />
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<div id="right">
+	
+			
+			
+			
+			
+			<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+			TwitterSearch.search('#drinkup');
+
+
+			//]]>
+			</script> 
+			<div id="resp">Share the good times globally and please drink responsibly.
+			
+			
+			
+						
+			
+			
+			<!-- <div id="folw"> --> <span class="social-btns"><a href="https://twitter.com/intent/tweet?button_hashtag=DrinkUp&text=Playing%20a%20sweet%20twitter%20drinking%20game!" class="twitter-hashtag-button" data-related="DrinkUpGame" data-url="http://littletinker.co/drinkup/?via=TweetBtn">Tweet #DrinkUp</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			
+			<a id="fbshare" name="fb_share" type="button" share_url="http://www.littletinker.co/drinkup/"></a> 
+				<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
+				        type="text/javascript">
+				</script></span>
+			
+			</div>
+
+		</div>
+	</body>
+</html>
